@@ -1,5 +1,6 @@
 'use strict';
 
+var assert = require('assert');
 var {defineSupportCode} = require('cucumber');
 
 var chai = require('chai');
@@ -7,6 +8,8 @@ var rp = require('request-promise');
 
 var expect = chai.expect;
 var self = this;
+
+var hasNullValue = [];
 
 self.expectedKeys = [
     "name", 
@@ -34,36 +37,26 @@ self.expectedKeys = [
     "regionalBlocs"
 ];
 
+self.World = require(process.cwd() + '/features/support/world');
 defineSupportCode(function({Then, When}) {
-  When("I search for all the countries", {timeout: 60*1000}, function(done) {
-      rp({
-          uri: "https://restcountries.eu/rest/v2/all",
-          json: true
-      }).then(function(response) {
-          self.response = response;
-          done();
-      }).catch(function(err) {
-          throw err;
-      })
-  });
 
   Then("I should be able to see all the countries", function(done) {
-      expect(self.response).to.be.ok;
-      expect(self.response).to.be.an('array');
-      expect(self.response.length).to.be.at.least(196);
+      expect(self.World.response).to.be.ok;
+      expect(self.World.response).to.be.an('array');
+      expect(self.World.response.length).to.be.at.least(196);
     done();
   });
 
   Then("I should see all the information about each country", function(done) {
 
-      self.response.forEach(function(country) {
+      self.World.response.forEach(function(country) {
           expect(country).to.have.all.keys(self.expectedKeys);
           expect(country).to.be.an('object');
-          //console.log(country.numericCode);
           try{
           	if(expect(country.topLevelDomain).to.exist === -1) throw "Error"
           }catch(err){
           	console.log(country.name + " has no topLevelDomain");
+          	hasNullValue.push(country.name + " has no topLevelDomain");
           }
 
           try{
@@ -130,6 +123,7 @@ defineSupportCode(function({Then, When}) {
           	if(expect(country.area).to.exist === -1) throw "Error"
           }catch(err){
           	console.log(country.name + " has no area");
+          	hasNullValue.push(country.name + " has no area");
           }
 
           try{
@@ -198,6 +192,6 @@ defineSupportCode(function({Then, When}) {
           
           done();
       })
-  })
-
+	console.log("testing has no value " + hasNullValue);
+  });
 });
