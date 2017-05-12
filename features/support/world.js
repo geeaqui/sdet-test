@@ -15,7 +15,6 @@ var World = defineSupportCode(function({When}) {
           json: true
       }).then(function(response) {
           self.response = response;
-          console.log(self.response);
           done();
       }).catch(function(err) {
           throw err;

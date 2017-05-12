@@ -8,7 +8,7 @@ var self = this;
 
 defineSupportCode(function({Then, When}) {
 
-  When("I search country by it's counry code", {timeout: 60*1000}, function(done) {
+  When("I search country by it's counry code", function(done) {
     console.log("test2 testing " + self.response);
     done();
   });
