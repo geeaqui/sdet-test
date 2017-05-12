@@ -61,12 +61,6 @@ defineSupportCode(function({Then, When}) {
           expect(country).to.be.an('object');
           //console.log(country.numericCode);
           try{
-          	if(expect(country.area).to.exist === -1) throw "There is an error here";
-          }catch(err){
-          	console.log(country.name + " has no area Oh no!");
-          }
-
-          try{
           	if(expect(country.topLevelDomain).to.exist === -1) throw "Error"
           }catch(err){
           	console.log(country.name + " has no topLevelDomain");
@@ -78,55 +72,130 @@ defineSupportCode(function({Then, When}) {
           	console.log(country.name + " has no alpha2code");
           }
 
-                    try{
+          try{
           	if(expect(country.alpha3Code).to.exist === -1) throw "Error"
           }catch(err){
           	console.log(country.name + " has no alpha3code");
           }
 
-                    try{
+          try{
           	if(expect(country.callingCodes).to.exist === -1) throw "Error"
           }catch(err){
           	console.log(country.name + " has no callingCodes");
           }
 
-                    try{
-          	if(expect(country.topLevelDomain).to.exist === -1) throw "Error"
+          try{
+          	if(expect(country.capital).to.exist === -1) throw "Error"
           }catch(err){
-          	console.log(country.name + " has no topLevelDomain");
+          	console.log(country.name + " has no capital");
           }
 
-                    try{
-          	if(expect(country.topLevelDomain).to.exist === -1) throw "Error"
+          try{
+          	if(expect(country.altSpellings).to.exist === -1) throw "Error"
           }catch(err){
-          	console.log(country.name + " has no topLevelDomain");
+          	console.log(country.name + " has no altSpellings");
           }
 
-                    try{
-          	if(expect(country.topLevelDomain).to.exist === -1) throw "Error"
+          try{
+          	if(expect(country.region).to.exist === -1) throw "Error"
           }catch(err){
-          	console.log(country.name + " has no topLevelDomain");
+          	console.log(country.name + " has no region");
           }
- 
+ 		
+ 		  try{
+          	if(expect(country.subregion).to.exist === -1) throw "Error"
+          }catch(err){
+          	console.log(country.name + " has no subregion");
+          }
+
+          try{
+          	if(expect(country.population).to.exist === -1) throw "Error"
+          }catch(err){
+          	console.log(country.name + " has no population");
+          }
+
+          try{
+          	if(expect(country.latlng).to.exist === -1) throw "Error"
+          }catch(err){
+          	console.log(country.name + " has no latlang");
+          }
+
+          try{
+          	if(expect(country.demonym).to.exist === -1) throw "Error"
+          }catch(err){
+          	console.log(country.name + " has no demonym");
+          }
+
+          try{
+          	if(expect(country.area).to.exist === -1) throw "Error"
+          }catch(err){
+          	console.log(country.name + " has no area");
+          }
+
+          try{
+          	if(expect(country.gini).to.exist === -1) throw "Error"
+          }catch(err){
+          	console.log(country.name + " has no gini");
+          }
+
+          try{
+          	if(expect(country.timezones).to.exist === -1) throw "Error"
+          }catch(err){
+          	console.log(country.name + " has no timezones");
+          }
+
+          try{
+          	if(expect(country.borders).to.exist === -1) throw "Error"
+          }catch(err){
+          	console.log(country.name + " has no borders");
+          }
+
+          try{
+          	if(expect(country.nativeName).to.exist === -1) throw "Error"
+          }catch(err){
+          	console.log(country.name + " has no nativeName");
+          }
+
+          try{
+          	if(expect(country.numericCode).to.exist === -1) throw "Error"
+          }catch(err){
+          	console.log(country.name + " has no numericCode");
+          }
           
-          expect(country.capital).to.exist;
-          expect(country.altSpellings).to.exist;
-          expect(country.region).to.exist;
-          expect(country.subregion).to.exist;
-          expect(country.population).to.exist;
-          expect(country.latlng).to.exist;
-          expect(country.demonym).to.exist;
+          try{
+          	if(expect(country.currencies).to.exist === -1) throw "Error"
+          }catch(err){
+          	console.log(country.name + " has no currencies");
+          }
+
+          try{
+          	if(expect(country.languages).to.exist === -1) throw "Error"
+          }catch(err){
+          	console.log(country.name + " has no languages");
+          }
+
+          try{
+          	if(expect(country.translations).to.exist === -1) throw "Error"
+          }catch(err){
+          	console.log(country.name + " has no translation");
+          }
+
+          try{
+          	if(expect(country.flag).to.exist === -1) throw "Error"
+          }catch(err){
+          	console.log(country.name + " has no flag");
+          }
+
+          try{
+          	if(expect(country.regionalBlocs).to.exist === -1) throw "Error"
+          }catch(err){
+          	console.log(country.name + " has no regionalBlocs");
+          }
+          
           //expect(country.area).to.exist; some of the content are null
           //expect(country.gini).to.exist; some of the content are null
-          expect(country.timezones).to.exist;
-          expect(country.borders).to.exist;
-          expect(country.nativeName).to.exist;
           //expect(country.numericCode).to.exist; one of the object is null
-          expect(country.currencies).to.exist;
-          expect(country.languages).to.exist;
-          expect(country.translations).to.exist;
-          expect(country.flag).to.exist;
-          expect(country.regionalBlocs).to.exist;
+          
           done();
       })
   })
