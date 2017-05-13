@@ -1,6 +1,5 @@
 'use strict';
 
-var assert = require('assert');
 var {defineSupportCode} = require('cucumber');
 
 var chai = require('chai');
