@@ -24,16 +24,21 @@ defineSupportCode(function({Then,When}){
 	}
 
 	var ps = [];
-	for(var j=0; j<countryName.length; j++){
+		for(var j=0; j<countryName.length; j++){
 		var cLoop = {
     		uri: "https://restcountries.eu/rest/v2/name/"+ countryName[j] +"?fullText=true",
           	json: true
           }
-			ps.push(rp(cLoop));
-	}
+          	ps.push(rp(cLoop)
+          		.catch(function(err){
+          			console.log("There is an error in " + countryName[j]);
+          		}));
+		}
+
 	Promise.all(ps)
       	.then(function(response) {
           self.response = response;
+          console.log(self.response);
           done();
       	}).catch(function(err) {
           throw err;
