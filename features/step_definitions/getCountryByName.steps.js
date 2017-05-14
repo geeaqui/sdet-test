@@ -10,6 +10,8 @@ var self = this;
 
 var countryName = [];
 
+var unError = [];
+
 
 self.World = require(process.cwd() + '/features/support/world');
 
@@ -31,7 +33,8 @@ defineSupportCode(function({Then,When}){
           }
           	ps.push(rp(cLoop)
           		.catch(function(err){
-          			console.log("There is an error in " + countryName[j]);
+          			console.log("There is an error in   " + countryName[j]);
+          			unError.push(err);
           		}));
 		}
 
@@ -39,6 +42,7 @@ defineSupportCode(function({Then,When}){
       	.then(function(response) {
           self.response = response;
           console.log(self.response);
+          console.log("There are a total of " + unError.length + "errors.");
           done();
       	}).catch(function(err) {
           throw err;
