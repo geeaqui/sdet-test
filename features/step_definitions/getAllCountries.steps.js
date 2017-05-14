@@ -191,6 +191,5 @@ defineSupportCode(function({Then, When}) {
           
           done();
       })
-	console.log("testing has no value " + hasNullValue);
   });
 });
