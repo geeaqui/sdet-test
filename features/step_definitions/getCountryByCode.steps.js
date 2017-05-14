@@ -18,14 +18,13 @@ defineSupportCode(function({Then,When}){
 
 
   When("I search country by it's counry code", {timeout: 60*1000}, function(done) {
-  	console.log("testing testing testing");
   	
   	for(var i=0; i < self.World.response.length; i++){
 	countryCode.push(self.World.response[i].alpha3Code);
 	}
 
 	var ps = [];
-	for(var j=0; j<countryCode.length;j++){
+	for(var j=0; j<countryCode.length; j++){
 		var cLoop = {
     		uri: "https://restcountries.eu/rest/v2/alpha/" +countryCode[j],
           	json: true
@@ -35,11 +34,10 @@ defineSupportCode(function({Then,When}){
 	Promise.all(ps)
       	.then(function(response) {
           self.response = response;
-          console.log(self.response);
           done();
       	}).catch(function(err) {
           throw err;
-      	})
+      	}) 
   });
 
   Then("I can see further deatils about that country with that country code", function(done) {
