@@ -6,8 +6,10 @@ This document describes the Rest Country API test framework. The requirement for
 "As a user I want to be able to see all countries in the world So that I can then choose which country to see further details about"
 
 I was assigned to use the following API: https://restcountries.eu/rest/v2/all
+and as I came from a web development background, I chose to use cucumber.js for this test project as I am familiar with using javascript language and frameworks such as assertion library chai for my test case.
 
- The following three instruction bellow were provided in order to complete the framework:
+The following three instruction bellow were provided in order to complete the framework:
+
 
 1. Determine what coverage you would look to achieve through feature tests and what other techniques you might like to use to test to obtain good test coverage.  
 
@@ -19,7 +21,9 @@ I was assigned to use the following API: https://restcountries.eu/rest/v2/all
 
  Bellow are the Different features that were tested in order to test all the endpoint that Version 2 of the Rest Countries API had to offer 
 
-1. All Countries : "I want to view all of the countries in the world So that I can then choose which country to see further details about that country"
+1. All Countries : "As a user I want to view all of the countries in the world So that I can then choose which country to see further details about that country"
+2. Get Country By Name : "As a user I want to search country by name So that I can see further details about that country"
+3. Get Country by Country Code : "As a user I want to view country by its country code So that I can see further details about that country"
 
 
 ## Installation
@@ -28,10 +32,16 @@ I was assigned to use the following API: https://restcountries.eu/rest/v2/all
 
 * node v7.10.0
 
+## Technologies used for this test
+
+* Javascript
+* npm
+* cucumber.js
+* chai
 
 ### Features
 
-The acceptance tests are written on a high-level.
+The acceptance tests are written on a high-level language.
 
 ````
 When I search for all the countries
@@ -53,7 +63,6 @@ In general, the actual actions to be taken are described in the step definitions
     ./node_modules/.bin/cucumber-js
 
 ````
-
 
 ## Author
 Gerald Aqui
