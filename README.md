@@ -22,7 +22,9 @@ The following three instruction bellow were provided in order to complete the fr
  Bellow are the Different features that were tested in order to test all the endpoint that Version 2 of the Rest Countries API had to offer 
 
 1. All Countries : "As a user I want to view all of the countries in the world So that I can then choose which country to see further details about that country"
+
 2. Get Country By Name : "As a user I want to search country by name So that I can see further details about that country"
+
 3. Get Country by Country Code : "As a user I want to view country by its country code So that I can see further details about that country"
 
 
