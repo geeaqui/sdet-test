@@ -43,7 +43,6 @@ defineSupportCode(function({Then,When}){
   Then("I can see further deatils about that country with that country code", function(done) {
   	expect(self.World.response).to.be.ok;
   	expect(self.response).to.be.an('array');
-  	expect(self.response.length).to.be.at.least(196);
     done();
   });
 

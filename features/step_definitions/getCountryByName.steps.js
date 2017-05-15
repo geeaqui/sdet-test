@@ -33,7 +33,7 @@ defineSupportCode(function({Then,When}){
           }
           	ps.push(rp(cLoop)
           		.catch(function(err){
-          			console.log("There is an error in   " + countryName[j]);
+          			console.log(err);
           			unError.push(err);
           		}));
 		}
@@ -52,7 +52,6 @@ defineSupportCode(function({Then,When}){
   Then("I can see further details about that country", function(done) {
   	expect(self.World.response).to.be.ok;
   	expect(self.response).to.be.an('array');
-  	expect(self.response.length).to.be.at.least(196);
     done();
   });
 
