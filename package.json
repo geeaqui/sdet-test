@@ -1,12 +1,12 @@
 {
   "name": "sdet-easyjet",
   "version": "1.0.0",
-  "description": "",
+  "description": "Test for Country API",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Gerald Aqui",
   "license": "ISC",
   "dependencies": {
     "chai": "^3.5.0",
