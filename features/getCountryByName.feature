@@ -9,4 +9,4 @@ Feature: User get details of a country by searching its name from the RestCountr
 
   Scenario: Search a country with an invalid name
     When I search country with an invalid name
-    Then I should get an error message
+    Then I should get an error

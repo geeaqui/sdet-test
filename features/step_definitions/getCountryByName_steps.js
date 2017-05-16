@@ -39,7 +39,6 @@ defineSupportCode(function({Then,When}) {
 	 Promise.all(ps)
   	.then(function(response) {
       self.response = response;
-      //console.log(self.response);
       console.log("There are a total of " + unError.length + "errors.");
       done();
   	}).catch(function(err) {
@@ -70,7 +69,7 @@ defineSupportCode(function({Then,When}) {
     done();
   });
 
-    Then("I should get an error message", function(done) {
+    Then("I should get an error", function(done) {
     expect(self.response2).to.not.be.ok;
     done();
   });
