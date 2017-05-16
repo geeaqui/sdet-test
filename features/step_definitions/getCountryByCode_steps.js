@@ -10,17 +10,13 @@ var self = this;
 
 var countryCode = [];
 
-
 self.World = require(process.cwd() + '/features/support/world');
 
-
 defineSupportCode(function({Then,When}){
-
-
   When("I search country by it's counry code", {timeout: 60*1000}, function(done) {
-  	
+  
   	for(var i=0; i < self.World.response.length; i++){
-	countryCode.push(self.World.response[i].alpha3Code);
+		countryCode.push(self.World.response[i].alpha3Code);
 	}
 
 	var ps = [];
@@ -46,5 +42,4 @@ defineSupportCode(function({Then,When}){
   	expect(self.response).to.be.an('array');
     done();
   });
-
 });
