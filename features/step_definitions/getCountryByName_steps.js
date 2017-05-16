@@ -56,8 +56,7 @@ defineSupportCode(function({Then,When}) {
           self.response2 = response2;
           done();
         }).catch(function(err) {
-          if(err.statusCode !== 200)
-          console.log("Error: Invalid Request");
+            console.log("Error: Invalid Request");
         done();
       })
   });
